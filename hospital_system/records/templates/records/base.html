@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital System</title>
+    <link rel="stylesheet" href="/static/records/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Record System</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/patients/">Patients</a> |
+            <a href="/employees/">Employees</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <script src="/static/records/script.js"></script>
+</body>
+</html>

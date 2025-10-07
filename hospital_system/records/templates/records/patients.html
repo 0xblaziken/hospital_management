@@ -1,0 +1,29 @@
+{% extends 'records/base.html' %}
+
+{% block content %}
+<h2>Patient Records</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+    <button type="submit">Add Patient</button>
+</form>
+
+<table>
+    <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Admitted On</th></tr>
+    {% for patient in patients %}
+    <tr>
+        <td>{{ patient.id }}</td>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.gender }}</td>
+        <td>{{ patient.admitted_on }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
